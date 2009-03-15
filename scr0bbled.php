@@ -31,12 +31,6 @@ Author URI: http://01001111.net
   FROM,OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
   DEALINGS IN THE SOFTWARE.
 */
-
-/**params 
-	apiKey
-	number of albums to display
-	image sizes small,medium,large
-*/
 class scr0bbled
 {
 	/*-VARIABLES----------------------------------------------------------*/
@@ -247,7 +241,7 @@ function widget_scr0bbled_init()
 		";
 	}
 	register_sidebar_widget('scr0bbled','widget_scr0bbled');
-	register_widget_control('scr0bbled','widget_scr0bbled_options');//,$width,$height);
+	register_widget_control('scr0bbled','widget_scr0bbled_options');
 }
 //add_action('init',"widget_scr0bbled_init");
 add_action('plugins_loaded', 'widget_scr0bbled_init');
