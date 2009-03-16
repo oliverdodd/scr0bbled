@@ -39,18 +39,19 @@ class scr0bbled
 	private $nAlbums;
 	private $imageSize;
 	public $title;
+	private $divid;
 	
 	public static $imageSizes = array('small','medium','large');
 	
 	/*-CONSTRUCT----------------------------------------------------------*/
 	//public function __construct($k,$u,$n=10,$s='medium',$t="scr0bbled")
-	public function scr0bbled($k,$u,$n=10,$s='medium',$t="scr0bbled")
+	public function scr0bbled($k,$u,$n=10,$s='medium',$t="scr0bbled",$d="")
 	{
 		$this->apiKey		= $k;
 		$this->user		= $u;
 		$this->nAlbums		= $n;
 		$this->imageSize	= $s;
-		$this->title		= $t;
+		$this->divid		= $d;
 	}
 	
 	/*-URL----------------------------------------------------------------*/
@@ -136,7 +137,7 @@ class scr0bbled
 					title='".str_replace("'","&#39;",$title)."'
 					src='$src' /> ";
 		}
-		return $html;
+		return $this->divid ? "<div id='$this->divid'>$html</div>" : $html;
 	}
 	
 	/*-ARRAY ACCESSOR-----------------------------------------------------*/
@@ -157,7 +158,8 @@ class scr0bbled
 				'user'		=> "",
 				'nAlbums'	=> 10,
 				'imageSize'	=> "medium",
-				'title'		=> "scr0bbled")
+				'title'		=> "scr0bbled",
+				'divid'		=> "divid")
 			: $options;
 	}
 	
@@ -182,7 +184,8 @@ function widget_scr0bbled_options()
 					'user'		=> $_POST['scr0bbled-user'],
 					'nAlbums'	=> $_POST['scr0bbled-nAlbums'],
 					'imageSize'	=> $_POST['scr0bbled-imageSize'],
-					'title'		=> $_POST['scr0bbled-title']);
+					'title'		=> $_POST['scr0bbled-title'],
+					'divid'		=> $_POST['scr0bbled-divid']);
 		update_option('scr0bbled',$options);
 	}
 	?>
@@ -218,6 +221,12 @@ function widget_scr0bbled_options()
 			id="scr0bbled-title"
 			value="<?php echo $options['title']; ?>"  />
 	</p>
+	<p>	Wrapper Div ID (blank for no div):
+		<input	type="text"
+			name="scr0bbled-divid"
+			id="scr0bbled-divid"
+			value="<?php echo $options['divid']; ?>"  />
+	</p>
 	<input type="hidden" id="scr0bbled-submit" name="scr0bbled-submit" value="1" />
 	<?php
 }
@@ -233,7 +242,8 @@ function widget_scr0bbled_init()
 					$options['user'],
 					$options['nAlbums'],
 					$options['imageSize'],
-					$options['title']);
+					$options['title'],
+					$options['divid']);
 		echo "	$before_widget
 			$before_title $s->title $after_title
 				{$s->latestAlbums()}
