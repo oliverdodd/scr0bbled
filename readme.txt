@@ -50,6 +50,10 @@ If there is no album art associated with that track on LastFM then it will not b
 
 There's no way to grab a certain number of recently listened albums in one request so, rather than assaulting LastFM with multiple requests, I've used 10 as a multiplier to approximate the tracks needed to get the requested number of albums.  Tracks without artwork or albums with a large number of tracks (like Pg Destroyer's "37 Counts of Battery") can thwart this valiant effort.
 
+= Why do some albums show up multiple times? =
+
+If the album name associated with one track differs slightly from that of another track that is supposed to be from the same album (such as happens with His Hero Is Gone - "Fifteen Counts of Arson" which is also listed at times as "15 Counts of Arson") then, unfortunately, the album will appear twice.  Again, try rectify this problem through LastFM by making sure all of the album associations are correct and consistent.
+
 == Screenshots ==
 
 None at the moment.
