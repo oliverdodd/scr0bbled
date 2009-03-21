@@ -9,7 +9,7 @@ Display the latest [available] album artwork from tracks recently scrobbled to L
 
 == Description ==
 
-The scr0bbled widget/plugin will allow you to display a variable (and approximate) list of album images from tracks recently scrobbled to LastFM for any specific user.
+The scr0bbled widget will allow you to display a variable (and approximate) list of album images from tracks recently scrobbled to LastFM for any specific user.
 
 * Note: A LastFM API key is required for this widget to work.  See http://www.last.fm/api for more information.
 
