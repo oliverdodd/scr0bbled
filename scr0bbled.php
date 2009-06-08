@@ -4,7 +4,7 @@ Plugin Name: scr0bbled
 Plugin URI: http://wordpress.org/#
 Description: latest [available] album artwork from recently scrobbled tracks
 Author: Oliver C Dodd
-Version: 1.0
+Version: 1.0.1
 Author URI: http://01001111.net
   
   Copyright (c) 2009 Oliver C Dodd - http://01001111.net
@@ -57,10 +57,19 @@ class scr0bbled
 	/*-URL----------------------------------------------------------------*/
 	private function url($method,$args=array())
 	{
-		$args = is_array($args) ? http_build_query($args) : $args;
+		$args = $this->queryString($args);
 		if ($args) $args = "&$args";
 		return "http://ws.audioscrobbler.com/2.0/".
 			"?method=$method&api_key=$this->apiKey$args";
+	}
+	private function queryString($args)
+	{
+		if (!is_array($args))
+			return $args;
+		$pairs = "";
+		foreach ($args as $k => $v)
+			$pairs[] = "$k=$v";
+		return implode('&',$pairs);
 	}
 	/*-GET RECENT TRACKS--------------------------------------------------*/
 	private function recentTracks($limit=50)
