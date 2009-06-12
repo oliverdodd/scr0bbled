@@ -4,7 +4,7 @@ Plugin Name: scr0bbled
 Plugin URI: http://wordpress.org/#
 Description: latest [available] album artwork from recently scrobbled tracks
 Author: Oliver C Dodd
-Version: 1.0.2
+Version: 1.0.3
 Author URI: http://01001111.net
   
   Copyright (c) 2009 Oliver C Dodd - http://01001111.net
@@ -169,7 +169,7 @@ class scr0bbled
 				'nAlbums'	=> 10,
 				'imageSize'	=> "medium",
 				'title'		=> "scr0bbled",
-				'divid'		=> "divid")
+				'divid'		=> "")
 			: $options;
 	}
 	
