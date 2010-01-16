@@ -1,5 +1,6 @@
 === scr0bbled ===
 Contributors: 01001111
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=11216463
 Tags: widget, music, lastfm
 Requires at least: 2.0.2
 Tested up to: 2.7
@@ -57,3 +58,29 @@ If the album name associated with one track differs slightly from that of anothe
 == Screenshots ==
 
 None at the moment.
+
+
+== Changelog ==
+
+= 1.0.3 =
+* Miscellaneous fixes.
+
+= 1.0.2 =
+* Fixed bug where title may not have been set.
+
+= 1.0.1 =
+* Implemented non PHP 5 query string builder.
+
+= 1.0.0 =
+* First release.
+
+== Upgrade Notice ==
+
+= 1.0.3 =
+* Miscellaneous fixes.
+
+= 1.0.2 =
+* Fixed bug where title may not have been set.
+
+= 1.0.1 =
+* Implemented non PHP 5 query string builder.
